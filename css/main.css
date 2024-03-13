@@ -1,9 +1,17 @@
 body{
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;   
+    font-family: Arial, Helvetica, sans-serif; 
+    background-color: white;  
 }
 
 .topNav{
+    width: 100%;
+    overflow: hidden;
+    background-color: #FFF257;
+    position: fixed;
+}
+
+.topNavNormal{
     overflow: hidden;
     background-color: #FFF257;
 }
@@ -17,16 +25,226 @@ body{
     font-size: 17px;
 }
 
+.topNavNormal a{
+    float: left;
+    color: #324A62;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
 .topNavRight {
     float: right;
 }
 
 .topNav a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: white;
+    color: #E8222E;
+    border: 2px solid #324A62;
+}
+
+.topNavNormal a:hover {
+    background-color: white;
+    color: #E8222E;
+    border: 2px solid #324A62;
 }
 
 .topNav a.active {
     background-color: #E8222E;
     color: white;
+    border: 2px solid #E8222E;
+}
+
+.topNavNormal a.active {
+    background-color: #E8222E;
+    color: white;
+    border: 2px solid #E8222E;
+}
+
+.itemContainer{
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.image1 {
+padding: 10px;
+flex: 50%;
+}
+
+.image1 img{
+    width: 30%;
+}
+
+
+.text1{
+    padding: 60px;
+    flex: 50%; /* means that the image will be 50% of the screen*/
+    text-align: justify;
+}
+
+.text1 img{ /*do this every time you add an image to make the sizing work*/
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+.button {
+    background-color: #324A62; /* Green */
+    color: #ddd;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+.button:hover {
+  background-color: #E8222E;
+  color: white;
+}
+
+.centerText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #324A62;
+    color: white;
+    
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #324A62;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #E8222E;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.imgTextOverlay {
+    touch-action: ;
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 100px;
+}
+
+.imgTextOverlay img{
+    width: 100%;
+    opacity: 0.85;
+}
+
+.center{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #FFF257;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #324A62;
+    color: white;
+}
+
+.flexBox{
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.flexItem1 {
+    padding: 10px;
+    flex: 25%;
+}
+
+.flexItem1 img{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+@media (max-width:800px){ /*make it responsive to different screens*/
+    .flexContainer{
+        flex-direction: column;
+    }
+
+    .flexItem1 img{
+        height: auto;
+    }
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #324A62;
+}
+
+.hoverBox:hover .overlay{
+    opacity: 0.8;
+}
+
+.overlayText{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
 }
